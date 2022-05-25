@@ -10,8 +10,9 @@ public class HousesRunner {
 		//Do not add any more code here!
 		
 		Houses houseBuilder = new Houses();
+		
 		houseBuilder.run();
-
+		
 
 	}
 

@@ -49,8 +49,9 @@ public class RainGame extends PApplet {
     int bucketWidth = 50;
     int bucketHeight;
     PImage bucket;
-    int y;
-    int x;
+    int y = 50;
+    int x= 0;
+    
 
     // Sets the size of your canvas
     @Override
@@ -68,6 +69,10 @@ public class RainGame extends PApplet {
     @Override
     public void draw() {
     	fill(0,255,0);
+    	y = y - 50;
+    	x=  x - 50;
+    	ellipse(y,x, 10,15);
+
     }
 
     static public void main(String[] args) {

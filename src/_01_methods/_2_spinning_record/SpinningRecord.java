@@ -66,8 +66,8 @@ public class SpinningRecord extends PApplet {
         PApplet.main(SpinningRecord.class.getName());
         int spin = 0;
         spin++;
-     //   loadPlayer();
-     //   rotateImage(PImage image, int amountToRotate);
+     loadPlayer();
+       rotateImage(PImage image, int spin);
 
     }
     /*********************** DO NOT MODIFY THE CODE BELOW ********************/

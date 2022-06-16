@@ -12,6 +12,9 @@ public class FlappyBird extends PApplet {
     int px = 700;
     int ph = 200;
     int ph2 = 200;
+    int py = 0;
+    int py2 = 0;
+    int ff = 0;
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -35,24 +38,34 @@ public class FlappyBird extends PApplet {
     	}
     	y++;
     	fill(0,255,0);
-    	rect(px,400,100,ph2);
-    	rect(px,0,100,ph);
+    	ph2 = 200;
+    	rect(px,py,100,ph);
+    	rect(px,py2,100,300);
     	px = px - 5;
     	if (px == -100) {
     		px = 700;
     		int ra = new Random().nextInt(200 - 10 + 1) + 100;
+    		py2 = py + ra + 200;
     		ph = ra;
-    		int ra2 = new Random().nextInt(500 - 200 + 1) + 200;
-    		ph2 = ra2;
+    		
+    		
     	}
+    	if(ff > 200) {
+    	intersectsPipes();
+    	}
+    	ff++;
     }
 
-    boolean intersectsPipes() { 
-        if (y < upperPieHeight && x > pipeX && x < (pipeX+pipeWidth)){
-           return true; }
-       else if (y>lowerPipeTop && x > pipeX && x < (pipeX+pipeWidth)) {
-           return true; }
-       else { return false; }
+    void intersectsPipes() { 
+        if (y < ph && px < 120){
+        	System.out.println("Game Over");
+        	exit();
+        }
+       else if (y>py2 && x > px) {
+    	   System.out.println("Game Over");
+    	   exit();
+       }
+       else {  }
 }
     static public void main(String[] args) {
         PApplet.main(FlappyBird.class.getName());

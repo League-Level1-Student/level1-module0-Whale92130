@@ -51,6 +51,7 @@ public class ListOfGoals {
 		if( getNumberOfGoals() > 5) {
 			return true;
 		}
+		
 		return false;
 	}
 	
